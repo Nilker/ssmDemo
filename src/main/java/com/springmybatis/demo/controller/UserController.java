@@ -2,6 +2,7 @@ package com.springmybatis.demo.controller;
 
 
 import com.springmybatis.demo.Common.GenericController;
+import com.springmybatis.demo.Common.SystemLog;
 import com.springmybatis.demo.entity.User;
 import com.springmybatis.demo.service.UserService;
 import io.swagger.annotations.Api;
@@ -51,6 +52,7 @@ public class UserController extends GenericController {
     @RequestMapping(value = "/getUserJson1",method = RequestMethod.GET)
     @ResponseBody
     @ApiOperation(httpMethod = "Get",value = "获取用户byID",produces = MediaType.APPLICATION_JSON_VALUE)
+    @SystemLog(methods = "获取用户",module = "用户")
     public List getUsers2(@RequestParam Integer userId, HttpServletRequest request, HttpServletResponse response) {
         //调用service方法得到用户列表
         List<User> users = userService.getUsers(userId);
