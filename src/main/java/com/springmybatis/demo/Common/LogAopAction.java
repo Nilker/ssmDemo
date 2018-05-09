@@ -9,8 +9,7 @@ import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.Signature;
 import org.aspectj.lang.annotation.*;
 import org.aspectj.lang.reflect.MethodSignature;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 import java.lang.reflect.Method;
@@ -18,6 +17,9 @@ import com.alibaba.fastjson.JSON;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.Date;
+
+import org.apache.log4j.Logger;
+
 
 @Aspect
 public class LogAopAction {
@@ -28,7 +30,7 @@ public class LogAopAction {
     private long END_TIME;
 
     //    log
-    private static final Logger logger= LoggerFactory.getLogger(LogAopAction.class);
+    private  final Logger logger= Logger.getLogger(LogAopAction.class);
 
     //定义本次log实体
     private Log log = new Log();
