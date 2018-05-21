@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.springmybatis.demo.dao.mapper.UserMapper">
+  <cache eviction="LRU" type="com.springmybatis.demo.Redis.RedisCache" />
   <resultMap id="BaseResultMap" type="com.springmybatis.demo.entity.User">
     <!--
       WARNING - @mbg.generated

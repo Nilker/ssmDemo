@@ -3,6 +3,7 @@ package com.springmybatis.demo.controller;
 
 import com.springmybatis.demo.Common.GenericController;
 import com.springmybatis.demo.Common.SystemLog;
+import com.springmybatis.demo.Redis.aop.GetCache;
 import com.springmybatis.demo.entity.User;
 import com.springmybatis.demo.service.UserService;
 import io.swagger.annotations.Api;
@@ -35,20 +36,23 @@ public class UserController extends GenericController {
     private UserService userService;
 
 
-    //返回jsp视图展示
-    @RequestMapping(value = "/getUserModel",method = RequestMethod.GET)
-    public ModelAndView getUsers1(@RequestParam Integer userId) {
-        ModelAndView modelAndView = new ModelAndView();
-        //调用service方法得到用户列表
-        List<User> users = userService.getUsers(userId);
-        //将得到的用户列表内容添加到ModelAndView中
-        modelAndView.addObject("users",users);
-        //设置响应的jsp视图
-        modelAndView.setViewName("getUsers");
-        logger.info("===============================成功查询用户列表！");
-        return modelAndView;
-    }
+//    //返回jsp视图展示
+//    @RequestMapping(value = "/getUserModel",method = RequestMethod.GET)
+//    public ModelAndView getUsers1(@RequestParam Integer userId) {
+//        ModelAndView modelAndView = new ModelAndView();
+//        //调用service方法得到用户列表
+//        List<User> users = userService.getUsers(userId);
+//        //将得到的用户列表内容添加到ModelAndView中
+//        modelAndView.addObject("users",users);
+//        //设置响应的jsp视图
+//        modelAndView.setViewName("getUsers");
+//        logger.info("===============================成功查询用户列表！");
+//        return modelAndView;
+//    }
+
+
     //返回json格式数据，形式1
+    @GetCache()
     @RequestMapping(value = "/getUserJson1",method = RequestMethod.GET)
     @ResponseBody
     @ApiOperation(httpMethod = "Get",value = "获取用户byID",produces = MediaType.APPLICATION_JSON_VALUE)
@@ -59,12 +63,16 @@ public class UserController extends GenericController {
         logger.info("===============================成功查询用户列表！");
         return users;
     }
-    //返回json格式数据，形式2（自定义了返回的格式）
-    @RequestMapping(value = "/getUserJson2",method = RequestMethod.GET)
-    public void getUsers3(@RequestParam Integer userId, HttpServletRequest request, HttpServletResponse response) {
-        //调用service方法得到用户列表
-        List<User> users = userService.getUsers(userId);
-        logger.info("===============================成功查询用户列表！");
-        renderSuccessString(response, users);
-    }
+
+
+
+
+//    //返回json格式数据，形式2（自定义了返回的格式）
+//    @RequestMapping(value = "/getUserJson2",method = RequestMethod.GET)
+//    public void getUsers3(@RequestParam Integer userId, HttpServletRequest request, HttpServletResponse response) {
+//        //调用service方法得到用户列表
+//        List<User> users = userService.getUsers(userId);
+//        logger.info("===============================成功查询用户列表！");
+//        renderSuccessString(response, users);
+//    }
 }

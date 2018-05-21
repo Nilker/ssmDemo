@@ -1,10 +1,11 @@
 package com.springmybatis.demo.entity;
 
+import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.*;
 
 @Table(name = "user")
-public class User {
+public class User implements Serializable {
     @Id
     private Integer id;
 

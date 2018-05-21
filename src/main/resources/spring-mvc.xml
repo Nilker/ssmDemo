@@ -64,6 +64,7 @@
         </property>
     </bean>
 
-    <aop:aspectj-autoproxy expose-proxy="true" />
+    <aop:aspectj-autoproxy expose-proxy="true" proxy-target-class="true" />
     <bean id="logAopAction" class="com.springmybatis.demo.Common.LogAopAction "></bean>
+
 </beans>
