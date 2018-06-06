@@ -52,7 +52,7 @@ public class UserController extends GenericController {
 
 
     //返回json格式数据，形式1
-    @GetCache()
+    //@GetCache()
     @RequestMapping(value = "/getUserJson1",method = RequestMethod.GET)
     @ResponseBody
     @ApiOperation(httpMethod = "Get",value = "获取用户byID",produces = MediaType.APPLICATION_JSON_VALUE)

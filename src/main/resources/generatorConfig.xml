@@ -264,5 +264,6 @@
             <ignoreColumn column="deptId" delimitedColumnName=""/>
             -->
         </table>
+        <table tableName="areas" domainObjectName="Areas" />
     </context>
 </generatorConfiguration>

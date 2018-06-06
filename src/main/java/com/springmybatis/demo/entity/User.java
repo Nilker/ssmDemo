@@ -1,32 +1,22 @@
 package com.springmybatis.demo.entity;
 
-import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.*;
 
 @Table(name = "user")
-public class User implements Serializable {
+public class User {
     @Id
     private Integer id;
 
     /**
-     * 用户名称
+     * 賬號
      */
     private String username;
 
-    /**
-     * 生日
-     */
     private Date birthday;
 
-    /**
-     * 性别
-     */
     private String sex;
 
-    /**
-     * 地址
-     */
     private String address;
 
     /**
@@ -44,72 +34,60 @@ public class User implements Serializable {
     }
 
     /**
-     * 获取用户名称
+     * 获取賬號
      *
-     * @return username - 用户名称
+     * @return username - 賬號
      */
     public String getUsername() {
         return username;
     }
 
     /**
-     * 设置用户名称
+     * 设置賬號
      *
-     * @param username 用户名称
+     * @param username 賬號
      */
     public void setUsername(String username) {
         this.username = username == null ? null : username.trim();
     }
 
     /**
-     * 获取生日
-     *
-     * @return birthday - 生日
+     * @return birthday
      */
     public Date getBirthday() {
         return birthday;
     }
 
     /**
-     * 设置生日
-     *
-     * @param birthday 生日
+     * @param birthday
      */
     public void setBirthday(Date birthday) {
         this.birthday = birthday;
     }
 
     /**
-     * 获取性别
-     *
-     * @return sex - 性别
+     * @return sex
      */
     public String getSex() {
         return sex;
     }
 
     /**
-     * 设置性别
-     *
-     * @param sex 性别
+     * @param sex
      */
     public void setSex(String sex) {
         this.sex = sex == null ? null : sex.trim();
     }
 
     /**
-     * 获取地址
-     *
-     * @return address - 地址
+     * @return address
      */
     public String getAddress() {
         return address;
     }
 
     /**
-     * 设置地址
-     *
-     * @param address 地址
+     * @param address
      */
     public void setAddress(String address) {
         this.address = address == null ? null : address.trim();

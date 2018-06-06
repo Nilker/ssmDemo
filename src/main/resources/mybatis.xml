@@ -43,5 +43,16 @@
         <!-- 指定哪个对象的方法触发一次延迟加载。 -->
         <setting name="lazyLoadTriggerMethods" value="equals,clone,hashCode,toString" />
     </settings>
+    <!--分页插件-->
+    <plugins>
+        <plugin interceptor="com.github.pagehelper.PageInterceptor">
+            <!--&lt;!&ndash;第一个属性 dialectClass，方言实现类，需要实现org.noo.pagination.dialect.Dialect 接口&ndash;&gt;-->
+            <!--<property name="dialectClass" value="org.noo.pagination.dialect.db.MySQLDialect"/>-->
+            <!--&lt;!&ndash;第二个属性sqlPattern表示插件需要拦截的SQL ID，为正则表达式。            例如.*findAll.* 表示拦截 包含 findAll 的查询sql&ndash;&gt;-->
+            <!--<property name="sqlPattern" value=".*findAll.*"/>-->
+            <!-- config params as the following -->
+            <property name="param1" value="value1"/>
+        </plugin>
+    </plugins>
 
 </configuration>

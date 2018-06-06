@@ -115,7 +115,6 @@
     <!-- 配置mybatis mapper接口，扫描所有dao -->
     <bean class="tk.mybatis.spring.mapper.MapperScannerConfigurer">
         <property name="basePackage" value="com.springmybatis.demo.dao.mapper"/>
-        <property name="sqlSessionTemplateBeanName" value="sqlSessionTemplate"/>
     </bean>
 
      <!-- 事务管理 通知 -->

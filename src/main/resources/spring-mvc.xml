@@ -13,13 +13,13 @@
     <!--启用spring的一些annotation -->
     <context:annotation-config/>
 
-    <!-- 自动扫描该包，使SpringMVC认为包下用了@controller注解的类是控制器 -->
-    <context:component-scan base-package="com.springmybatis.demo.controller">
-        <context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
-    </context:component-scan>
+    <!--&lt;!&ndash; 自动扫描该包，使SpringMVC认为包下用了@controller注解的类是控制器 &ndash;&gt;-->
+    <!--<context:component-scan base-package="com.springmybatis.demo.controller">-->
+        <!--<context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>-->
+    <!--</context:component-scan>-->
 
-    <!--扫描service-->
-    <context:component-scan base-package="com.springmybatis.demo.service"/>
+    <!--&lt;!&ndash;扫描service&ndash;&gt;-->
+    <!--<context:component-scan base-package="com.springmybatis.demo.service"/>-->
 
     <!--HandlerMapping 无需配置，SpringMVC可以默认启动-->
 
